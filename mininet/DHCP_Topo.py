@@ -117,7 +117,7 @@ class dhcpTopo(Topo):
         host = self.addHost('host', ip=None)
         self.addLink(s1, host)
         
-        serv = self.addHost('serv')
+        serv = self.addHost('serv', ip='10.0.1.3')
         self.addLink(s1, serv)
 
 topos = { 'mytopo': ( lambda: dhcpTopo() ) }

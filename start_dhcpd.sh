@@ -1,3 +1,15 @@
+echo "Checking for Leases file at /var/lib/dhcp/dhcpd.leases"
+ls /var/lib/dhcp/dhcpd.leases
+if [ $? -eq "0" ]
+then
+    echo "Lease file exists, changing permissions"
+    sudo chmod 666 /var/lib/dhcp/dhcpd.leases
+else
+    echo "Lease file does not exist, Creating lease file and giving permissions"
+    sudo touch /var/lib/dhcp/dhcpd.leases
+    sudo chmod 666 /var/lib/dhcp/dhcpd.leases
+fi
+
 echo "Attempt to start DHCP Daemon"
 sudo dhcpd -4 -cf /etc/dhcp/dhcpd.conf
 DHCPD_ERROR_CODE=$?
