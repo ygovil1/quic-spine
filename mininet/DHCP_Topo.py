@@ -114,8 +114,20 @@ class dhcpTopo(Topo):
         self.addLink(s1, dhcp)
         
         #add one hosts with no assigned IP and 1 with assigned
-        host = self.addHost('host', ip=None)
+        host = self.addHost('host', ip='10.0.1.4')
         self.addLink(s1, host)
+        
+        host2 = self.addHost('host2', ip='10.0.1.5')
+        self.addLink(s1, host2)
+        
+        host3 = self.addHost('host3', ip='10.0.1.6')
+        self.addLink(s1, host3)
+        
+        host4 = self.addHost('host4', ip='10.0.1.7')
+        self.addLink(s1, host4)
+
+        host5 = self.addHost('host5', ip='10.0.1.8')
+        self.addLink(s1, host5)
         
         serv = self.addHost('serv', ip='10.0.1.3')
         self.addLink(s1, serv)

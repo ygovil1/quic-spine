@@ -18,6 +18,8 @@ dhcp sh start_dhcpd.sh
 
 # Start the DHCP client on the host
 host sudo dhclient -v -1
+# OR manually set an IP address
+host ifconfig host-eth0 10.0.1.41 netmask 255.255.255.0
 
 # Start the QUIC server on the server
 serv sh start_server.sh

@@ -104,7 +104,7 @@ if __name__ == '__main__':
         dhcps.close()
         input('press any key to quit...')
         exit()
- 
+
     #buiding and sending the DHCPDiscover packet
     discoverPacket = DHCPDiscover()
     dhcps.sendto(discoverPacket.buildPacket(), ('<broadcast>', 67))
